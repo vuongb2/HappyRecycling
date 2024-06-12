@@ -1,0 +1,17 @@
+[
+    {"image":"../../img/bread.png", "description":"Bread", "correctBin":"compost"},
+    {"image":"../../img/cardboard.png", "description":"Cardboard", "correctBin":"recycle"},
+    {"image":"../../img/dentalfloss.png", "description":"Dental Floss", "correctBin":"trash"},
+    {"image":"../../img/eggshells.png", "description":"Egg Shells", "correctBin":"compost"},
+    {"image":"../../img/gloves.png", "description":"Used Gloves", "correctBin":"trash"},
+    {"image":"../../img/jug.png", "description":"Clean Plastic Jug", "correctBin":"recycle"},
+    {"image":"../../img/mask.png", "description":"Disposable Masks", "correctBin":"trash"},
+    {"image":"../../img/paper.png", "description":"Paper", "correctBin":"recycle"},
+    {"image":"../../img/papertowel.png", "description":"Used Paper Towels", "correctBin":"compost"},
+    {"image":"../../img/pizzabox.png", "description":"Greasy Pizza Box", "correctBin":"compost"},
+    {"image":"../../img/snackwrappers.png", "description":"Candy Wrappers", "correctBin":"trash"},
+    {"image":"../../img/soda.png", "description":"Empty Soda Can", "correctBin":"recycle"},
+    {"image":"../../img/vegetables.png", "description":"Vegetables", "correctBin":"compost"},
+    {"image":"../../img/waterbottle.png", "description":"Empty Plastic Bottle", "correctBin":"recycle"},
+    {"image":"../../img/wipes.png", "description":"Baby Wipes", "correctBin":"trash"}
+]

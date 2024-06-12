@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="Brenda, Brandon, Taylor & Arty">
+  <meta name="description" content="Learn page">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <title>Recycle Game</title>
+  <style>
+    .dragged {
+      width: 100px; 
+      height: 100px;
+    }
+    .drop-bin {
+      min-height: 100px; 
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s;
+      cursor: move;
+      margin: auto;
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 200px;
+    }
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .card.clicked {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    }
+    #drop-bins {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 100px;
+      padding: 10px;
+    }
+    .drop-bin {  
+      position: relative;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center; 
+      position: relative; 
+      min-width: 150px; 
+      min-height: 150px; 
+      background-color: inherit;
+    }
+    .drop-bin img {
+      position: absolute; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1; 
+    }
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+    .message-container {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    text-align: center;
+    z-index: 3;
+    }
+    .bin-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    }
+
+    .bin-description {
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+  
+    text-align: center;
+    }
+.bin-image::after {
+  content: "";
+  background-color: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+#new-item {
+  background-color: green;  
+  color: white;  
+  border: none;  
+  padding: 15px 32px;  
+  text-align: center;  
+  text-decoration: none;  
+  display: inline-block;  
+  font-size: 16px;  
+  border-radius: 10px;  
+  cursor: pointer;  
+  transform: translateY(-100px);
+}
+#new-item:hover {
+  background-color: darkgreen; 
+  color: white; 
+}
+#play-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; 
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.game-head-text h1 {
+  color: #31AD3A;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.game-head-text p {
+  text-align: center;
+  padding: 10px 0;
+}
+.gameItemSize {
+  width:  150px;  
+  height: 150px; 
+  margin-bottom: 200px;
+  padding: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="top-navbar">
+      <div class="logo-name">
+        <img class="logo-img" src="../../img/earthlogo.png" atl="earth reading a map" />
+        <h2>HAPPY RECYCLING</h2>
+      </div>
+
+      <ul class="navbar-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Learn.html">Learn</a></li>
+        <li><a class="page-link active" href="Game.html">Game</a></li>
+        <li><a href="SpecialCases.html">Special Cases</a></li>
+      </ul>
+
+      <script src="underline.js"></script>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+    <script src="navbar.js"></script>
+  </header>
+
+  <main>
+  <div class="game-head-text">
+    <h1>RECYCLE GAME</h1>
+    <p>Please drag and drop the item in the correct bin</p>
+  </div>
+
+  <div class="container">
+  <div id="play-space">
+    <div id="placeholder">
+        <div id="card" class="card" draggable="true">
+            <img src="../../img/cardboard.png" alt="Game Item 1">
+    
+            <span class="kebab">☰</span>
+        </div>
+    </div>
+    <button id="new-item">New Item</button>
+  </div>
+  </div>
+
+  <div id="drop-bins">
+    <div id="recycle-bin" class="drop-bin">
+      <img class="bin-image" src="../components/recyclebin.jpg">
+      <p class="bin-description">Recycle Bin</p>
+    </div>
+      
+    <div id="trash-bin" class="drop-bin">
+      <img class="bin-image" src="../components/trash.jpg">
+      <p class="bin-description">Trash Bin</p>
+    </div>
+    
+    <div id="compost-bin" class="drop-bin">
+      <img class="bin-image" src="../components/compost.jpg">
+      <p class="bin-description">Compost Bin</p>
+    </div>
+  </div>
+
+  <script src="../components/game.js"></script>
+  </main>
+
+  <footer>
+    <a><span>&copy;</span>INFO 442 Project -&nbsp</a>
+    <div class="foot-contact">
+      <a href="mailto:twrusson@gmail.com">Contact Us!</a>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
